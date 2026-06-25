@@ -1,0 +1,100 @@
+{%- comment -%} SOMNIA — entire homepage, self-contained (no blocks, no snippet deps) {%- endcomment -%}
+{%- assign mark = '<svg class="som-mark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.4"/><path d="M12 12 L17 8.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/></svg>' -%}
+
+<!-- HERO -->
+<section class="som-section som--light som-hero">
+  <div class="som-wrap som-hero__visual">
+    <div class="som-blob"></div>
+    <div class="som-hero__meta">HERO &middot; MODEL L<br>Matte form &middot; partial reveal<br>The curve of a presence</div>
+  </div>
+  <div class="som-wrap som-hero__foot">
+    <div class="som-hero__brand som-reveal">{{ mark }}<span>somnia</span></div>
+    <h1 class="som-reveal" data-delay="1">Desire, engineered.</h1>
+    <div class="som-chips som-reveal" data-delay="2">
+      <span class="lead">Explore</span>
+      <a href="{{ routes.all_products_collection_url }}" class="som-chip">Model L</a>
+      <a href="{{ routes.root_url }}" class="som-chip">Founder Edition</a>
+      <a href="{{ blogs.news.url | default: routes.root_url }}" class="som-chip">Stories</a>
+    </div>
+    <span class="som-scroll-cue"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M6 13l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="som-section som--light som-statement">
+  <div class="som-wrap som-statement__grid">
+    <div class="som-index som-reveal"><span class="num">00</span><span class="lbl som-muted">A new presence</span></div>
+    <h2 class="som-reveal" data-delay="1">Somnia is the first lab to engineer intimacy robotics &mdash; an intelligent presence, built mind-first, designed for the moments you keep to yourself.</h2>
+  </div>
+</section>
+
+<!-- BELIEFS -->
+<section class="som-section som--dark som-beliefs">
+  <div class="som-wrap">
+    <div class="som-belief som-reveal"><div class="som-index"><span class="num">0.1</span><span class="lbl som-muted">Our belief</span></div><h3>Desire is not a problem to fix.</h3></div>
+    <div class="som-belief som-reveal"><div class="som-index"><span class="num">0.2</span><span class="lbl som-muted">Our design</span></div><h3>The bedroom. Nothing else.</h3></div>
+    <div class="som-belief som-reveal"><div class="som-index"><span class="num">0.3</span><span class="lbl som-muted">Our promise</span></div><h3>Discreet. Refundable. Patient.</h3></div>
+    <div class="som-meta som-reveal">
+      <div class="som-meta__item"><div class="rule"></div><div class="k som-muted">Category</div><div class="v">Intimacy robotics</div></div>
+      <div class="som-meta__item"><div class="rule"></div><div class="k som-muted">First creation</div><div class="v">Model L</div></div>
+      <div class="som-meta__item"><div class="rule"></div><div class="k som-muted">Domain</div><div class="v">somnia.love</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BIG TYPE -->
+<section class="som-section som--light som-bigtype">
+  <span class="som-bigtype__cue som-reveal">{{ mark }}</span>
+  <div class="som-bigtype__label som-muted som-reveal" data-delay="1">Meet her</div>
+  <h2 class="som-bigtype__word som-reveal" data-delay="2">Love<br>Machine</h2>
+</section>
+
+<!-- TIMELINE -->
+<section class="som-section som--dark som-timeline">
+  <div class="som-wrap som-timeline__head">
+    <div class="som-timeline__title">
+      <div class="som-index som-reveal"><span class="lbl som-muted">The road</span></div>
+      <h2 class="som-reveal" data-delay="1">Two dates worth keeping</h2>
+      <a href="{{ routes.all_products_collection_url }}" class="som-link som-reveal" data-delay="2"><span class="dot"></span>Go to Love Machine</a>
+    </div>
+    <div class="som-dates">
+      <div class="som-date som-reveal"><h4>Presale &mdash; around August 2026</h4><p class="som-muted">Reservations open exclusively at somnia.love. The first run is limited to 1,000 units worldwide. Every deposit fully refundable, any time before delivery.</p></div>
+      <div class="som-date som-reveal"><h4>Q2 2027 &mdash; the day you meet her</h4><p class="som-muted">First deliveries arrive in a plain box, with a neutral billing name. Discreet by default, always.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTELLIGENCE -->
+<section class="som-section som--dark som-feature">
+  <div class="som-wrap som-feature__grid">
+    <div class="som-feature__title"><div class="som-index som-reveal"><span class="num">1.0</span><span class="lbl som-muted">Intelligence</span></div><h2 class="som-reveal" data-delay="1">She reads the moment</h2></div>
+    <div class="som-feature__body som-reveal" data-delay="1"><p class="som-muted">Local voice and visual sensing, processed on-device. She reads the moment, and sparks only the moments that matter &mdash; nothing leaves the room.</p><a href="{{ routes.root_url }}" class="som-link"><span class="dot"></span>How she protects you</a></div>
+  </div>
+</section>
+
+<!-- BAND -->
+<div class="som-section som-band"></div>
+
+<!-- STORIES -->
+<section class="som-section som--light som-feature">
+  <div class="som-wrap som-feature__grid">
+    <div class="som-feature__title"><div class="som-index som-reveal"><span class="num">2.0</span><span class="lbl som-muted">Stories</span></div><h2 class="som-reveal" data-delay="1">Watch her world</h2></div>
+    <div class="som-feature__body som-reveal" data-delay="1"><p class="som-muted">Films and stories from the edge of intimacy and machines &mdash; how a presence is made, and why.</p><a href="{{ blogs.news.url | default: routes.root_url }}" class="som-link"><span class="dot"></span>Go to Stories</a></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="som-section som--light som-feature">
+  <div class="som-wrap som-feature__grid">
+    <div class="som-feature__title"><div class="som-index som-reveal"><span class="num">3.0</span><span class="lbl som-muted">Get in touch</span></div><h2 class="som-reveal" data-delay="1">Get in touch</h2></div>
+    <div class="som-feature__body som-reveal" data-delay="1"><p class="som-muted">Founder Edition &mdash; 100 units, fully bespoke, by introduction only. Or come build her with us.</p><a href="{{ pages.contact.url | default: routes.root_url }}" class="som-link"><span class="dot"></span>Say hello</a></div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Somnia home",
+  "settings": [],
+  "presets": [{ "name": "Somnia home" }]
+}
+{% endschema %}
