@@ -1,0 +1,22 @@
+{%- comment -%} SOMNIA — oversized type (Love Machine) {%- endcomment -%}
+<section class="som-section som--{{ section.settings.theme }} som-bigtype">
+  <span class="som-bigtype__cue som-reveal">{% render 'somnia-mark' %}</span>
+  <div class="som-bigtype__label som-muted som-reveal" data-delay="1">{{ section.settings.label }}</div>
+  {%- assign words = section.settings.words | split: ' ' -%}
+  <h2 class="som-bigtype__word som-reveal" data-delay="2">
+    {%- for word in words -%}{{ word }}{% unless forloop.last %}<br>{% endunless %}{%- endfor -%}
+  </h2>
+</section>
+
+{% schema %}
+{
+  "name": "Somnia big type",
+  "tag": "section",
+  "settings": [
+    { "type": "select", "id": "theme", "label": "Theme", "options": [ { "value": "dark", "label": "Dark" }, { "value": "light", "label": "Light" } ], "default": "light" },
+    { "type": "text", "id": "label", "label": "Cue label", "default": "Meet her" },
+    { "type": "text", "id": "words", "label": "Words (one per line on display)", "default": "Love Machine" }
+  ],
+  "presets": [ { "name": "Somnia big type" } ]
+}
+{% endschema %}

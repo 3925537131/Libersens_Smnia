@@ -1,0 +1,24 @@
+{%- comment -%} SOMNIA — large statement / overview {%- endcomment -%}
+<section class="som-section som--{{ section.settings.theme }} som-statement">
+  <div class="som-wrap som-statement__grid">
+    <div class="som-index som-reveal">
+      <span class="num">{{ section.settings.index_num }}</span>
+      <span class="lbl som-muted">{{ section.settings.index_label }}</span>
+    </div>
+    <h2 class="som-reveal" data-delay="1">{{ section.settings.heading }}</h2>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Somnia statement",
+  "tag": "section",
+  "settings": [
+    { "type": "select", "id": "theme", "label": "Theme", "options": [ { "value": "dark", "label": "Dark" }, { "value": "light", "label": "Light" } ], "default": "light" },
+    { "type": "text", "id": "index_num", "label": "Index number", "default": "00" },
+    { "type": "text", "id": "index_label", "label": "Index label", "default": "Overview" },
+    { "type": "textarea", "id": "heading", "label": "Statement", "default": "Somnia is the first lab to engineer intimacy robotics — an intelligent presence, built mind-first, designed for the moments you keep to yourself." }
+  ],
+  "presets": [ { "name": "Somnia statement" } ]
+}
+{% endschema %}

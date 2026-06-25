@@ -1,0 +1,61 @@
+{%- comment -%} SOMNIA — hero {%- endcomment -%}
+<section class="som-section som--light som-hero">
+  <div class="som-wrap som-hero__visual">
+    <div class="som-blob"></div>
+    {%- if section.settings.meta_text != blank -%}
+      <div class="som-hero__meta">{{ section.settings.meta_text | newline_to_br }}</div>
+    {%- endif -%}
+  </div>
+
+  <div class="som-wrap som-hero__foot">
+    <div class="som-hero__brand som-reveal">
+      {% render 'somnia-mark' %}
+      <span>{{ section.settings.brand }}</span>
+    </div>
+    <h1 class="som-reveal" data-delay="1">{{ section.settings.heading }}</h1>
+
+    <div class="som-chips som-reveal" data-delay="2">
+      <span class="lead">{{ section.settings.chips_lead }}</span>
+      {%- for block in section.blocks -%}
+        <a href="{{ block.settings.url }}" class="som-chip" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
+      {%- endfor -%}
+    </div>
+
+    <span class="som-scroll-cue">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M6 13l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Somnia hero",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "brand", "label": "Brand", "default": "somnia" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Desire, engineered." },
+    { "type": "text", "id": "chips_lead", "label": "Chips lead-in", "default": "Explore" },
+    { "type": "textarea", "id": "meta_text", "label": "Hero visual caption", "default": "HERO · MODEL L\nMatte form · partial reveal\nThe curve of a presence" }
+  ],
+  "blocks": [
+    {
+      "type": "chip",
+      "name": "Chip",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Chip" },
+        { "type": "url", "id": "url", "label": "URL" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Somnia hero",
+      "blocks": [
+        { "type": "chip", "settings": { "label": "Model L" } },
+        { "type": "chip", "settings": { "label": "Founder Edition" } },
+        { "type": "chip", "settings": { "label": "Stories" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

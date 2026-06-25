@@ -1,75 +1,108 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero": {
+      "type": "somnia-hero",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
+        "ch1": { "type": "chip", "settings": { "label": "Model L", "url": "shopify://collections/all" } },
+        "ch2": { "type": "chip", "settings": { "label": "Founder Edition", "url": "/" } },
+        "ch3": { "type": "chip", "settings": { "label": "Stories", "url": "shopify://blog/news" } }
       },
-      "block_order": [
-        "heading",
-        "button"
-      ],
+      "block_order": ["ch1", "ch2", "ch3"],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "brand": "somnia",
+        "heading": "Desire, engineered.",
+        "chips_lead": "Explore",
+        "meta_text": "HERO · MODEL L\nMatte form · partial reveal\nThe curve of a presence"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "overview": {
+      "type": "somnia-statement",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "theme": "light",
+        "index_num": "00",
+        "index_label": "A new presence",
+        "heading": "Somnia is the first lab to engineer intimacy robotics — an intelligent presence, built mind-first, designed for the moments you keep to yourself."
+      }
+    },
+    "beliefs": {
+      "type": "somnia-beliefs",
+      "blocks": {
+        "b1": { "type": "belief", "settings": { "num": "0.1", "label": "Our belief", "text": "Desire is not a problem to fix." } },
+        "b2": { "type": "belief", "settings": { "num": "0.2", "label": "Our design", "text": "The bedroom. Nothing else." } },
+        "b3": { "type": "belief", "settings": { "num": "0.3", "label": "Our promise", "text": "Discreet. Refundable. Patient." } },
+        "m1": { "type": "meta", "settings": { "key": "Category", "value": "Intimacy robotics" } },
+        "m2": { "type": "meta", "settings": { "key": "First creation", "value": "Model L" } },
+        "m3": { "type": "meta", "settings": { "key": "Domain", "value": "somnia.love" } }
+      },
+      "block_order": ["b1", "b2", "b3", "m1", "m2", "m3"],
+      "settings": { "theme": "dark" }
+    },
+    "lovemachine": {
+      "type": "somnia-bigtype",
+      "settings": { "theme": "light", "label": "Meet her", "words": "Love Machine" }
+    },
+    "timeline": {
+      "type": "somnia-timeline",
+      "blocks": {
+        "d1": { "type": "date", "settings": { "title": "Presale — around August 2026", "body": "Reservations open exclusively at somnia.love. The first run is limited to 1,000 units worldwide. Every deposit fully refundable, any time before delivery." } },
+        "d2": { "type": "date", "settings": { "title": "Q2 2027 — the day you meet her", "body": "First deliveries arrive in a plain box, with a neutral billing name. Discreet by default, always." } }
+      },
+      "block_order": ["d1", "d2"],
+      "settings": {
+        "theme": "dark",
+        "index_label": "The road",
+        "heading": "Two dates worth keeping",
+        "link_label": "Go to Love Machine",
+        "link_url": "shopify://collections/all"
+      }
+    },
+    "intelligence": {
+      "type": "somnia-feature",
+      "settings": {
+        "theme": "dark",
+        "index_num": "1.0",
+        "index_label": "Intelligence",
+        "heading": "She reads the moment",
+        "body": "Local voice and visual sensing, processed on-device. She reads the moment, and sparks only the moments that matter — nothing leaves the room.",
+        "link_label": "How she protects you",
+        "link_url": "/"
+      }
+    },
+    "band": { "type": "somnia-band", "settings": {} },
+    "stories": {
+      "type": "somnia-feature",
+      "settings": {
+        "theme": "light",
+        "index_num": "2.0",
+        "index_label": "Stories",
+        "heading": "Watch her world",
+        "body": "Films and stories from the edge of intimacy and machines — how a presence is made, and why.",
+        "link_label": "Go to Stories",
+        "link_url": "shopify://blog/news"
+      }
+    },
+    "contact": {
+      "type": "somnia-feature",
+      "settings": {
+        "theme": "light",
+        "index_num": "3.0",
+        "index_label": "Get in touch",
+        "heading": "Get in touch",
+        "body": "Founder Edition — 100 units, fully bespoke, by introduction only. Or come build her with us.",
+        "link_label": "Say hello",
+        "link_url": "shopify://pages/contact"
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "hero",
+    "overview",
+    "beliefs",
+    "lovemachine",
+    "timeline",
+    "intelligence",
+    "band",
+    "stories",
+    "contact"
   ]
 }

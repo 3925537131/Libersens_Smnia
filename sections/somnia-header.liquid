@@ -1,0 +1,71 @@
+{%- comment -%} SOMNIA — custom sticky header {%- endcomment -%}
+<header class="som-header som-section" data-som-header>
+  <div class="som-header__inner">
+    <a href="{{ routes.root_url }}" class="som-logo" aria-label="{{ shop.name }}">
+      {% render 'somnia-mark' %}
+    </a>
+
+    <nav class="som-nav" aria-label="Primary">
+      {%- for link in section.blocks -%}
+        <a href="{{ link.settings.url }}" {{ link.shopify_attributes }}>{{ link.settings.label }}</a>
+      {%- endfor -%}
+    </nav>
+
+    <div class="som-header__actions">
+      {%- if shop.customer_accounts_enabled -%}
+        <a href="{{ routes.account_url }}" aria-label="Account">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M4 20c0-3.6 3.6-6 8-6s8 2.4 8 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      {%- endif -%}
+      <a href="{{ routes.cart_url }}" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 7h12l-1 12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 7Z" stroke="currentColor" stroke-width="1.5"/><path d="M9 7a3 3 0 0 1 6 0" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span class="som-cart-count">{{ cart.item_count }}</span>
+      </a>
+      <button class="som-burger" type="button" aria-label="Menu" data-som-burger>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav class="som-mobilenav" data-som-mobilenav hidden aria-label="Mobile">
+    {%- for link in section.blocks -%}
+      <a href="{{ link.settings.url }}">{{ link.settings.label }}</a>
+    {%- endfor -%}
+  </nav>
+</header>
+
+{% style %}
+  .som-mobilenav { display: flex; flex-direction: column; padding: 8px var(--som-gutter) 20px; gap: 4px; background: var(--som-cream); }
+  .som-mobilenav a { padding: 12px 0; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--som-black); border-bottom: 1px solid rgba(10,10,11,0.06); }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Somnia header",
+  "tag": "section",
+  "class": "som-header-section",
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Nav link",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Link" },
+        { "type": "url", "id": "url", "label": "URL" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Somnia header",
+      "blocks": [
+        { "type": "link", "settings": { "label": "Love Machine" } },
+        { "type": "link", "settings": { "label": "Shell Store" } },
+        { "type": "link", "settings": { "label": "Encounters" } },
+        { "type": "link", "settings": { "label": "Stories" } },
+        { "type": "link", "settings": { "label": "Careers" } },
+        { "type": "link", "settings": { "label": "About" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

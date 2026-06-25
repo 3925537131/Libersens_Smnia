@@ -1,0 +1,70 @@
+{%- comment -%} SOMNIA — beliefs + meta row {%- endcomment -%}
+<section class="som-section som--{{ section.settings.theme }} som-beliefs">
+  <div class="som-wrap">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'belief' -%}
+        <div class="som-belief som-reveal" {{ block.shopify_attributes }}>
+          <div class="som-index">
+            <span class="num">{{ block.settings.num }}</span>
+            <span class="lbl som-muted">{{ block.settings.label }}</span>
+          </div>
+          <h3>{{ block.settings.text }}</h3>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+
+    <div class="som-meta som-reveal">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'meta' -%}
+          <div class="som-meta__item" {{ block.shopify_attributes }}>
+            <div class="rule"></div>
+            <div class="k som-muted">{{ block.settings.key }}</div>
+            <div class="v">{{ block.settings.value }}</div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Somnia beliefs",
+  "tag": "section",
+  "settings": [
+    { "type": "select", "id": "theme", "label": "Theme", "options": [ { "value": "dark", "label": "Dark" }, { "value": "light", "label": "Light" } ], "default": "dark" }
+  ],
+  "blocks": [
+    {
+      "type": "belief",
+      "name": "Belief",
+      "settings": [
+        { "type": "text", "id": "num", "label": "Number", "default": "0.1" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Our belief" },
+        { "type": "text", "id": "text", "label": "Statement", "default": "Desire is not a problem to fix." }
+      ]
+    },
+    {
+      "type": "meta",
+      "name": "Meta item",
+      "settings": [
+        { "type": "text", "id": "key", "label": "Key", "default": "Category" },
+        { "type": "text", "id": "value", "label": "Value", "default": "Intimacy robotics" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Somnia beliefs",
+      "blocks": [
+        { "type": "belief", "settings": { "num": "0.1", "label": "Our belief", "text": "Desire is not a problem to fix." } },
+        { "type": "belief", "settings": { "num": "0.2", "label": "Our design", "text": "The bedroom. Nothing else." } },
+        { "type": "belief", "settings": { "num": "0.3", "label": "Our promise", "text": "Discreet. Refundable. Patient." } },
+        { "type": "meta", "settings": { "key": "Category", "value": "Intimacy robotics" } },
+        { "type": "meta", "settings": { "key": "First creation", "value": "Model L" } },
+        { "type": "meta", "settings": { "key": "Domain", "value": "somnia.love" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

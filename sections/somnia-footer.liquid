@@ -1,0 +1,61 @@
+{%- comment -%} SOMNIA — footer {%- endcomment -%}
+<footer class="som-section som-footer">
+  <div class="som-footer__inner">
+    <div class="som-footer__top">
+      <div class="som-footer__brand">
+        {% render 'somnia-mark', class: 'som-footer__mark' %}
+      </div>
+
+      <div class="som-footer__cols">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'column' -%}
+            <div class="som-footer__col" {{ block.shopify_attributes }}>
+              {%- assign items = block.settings.items | newline_to_br | split: '<br />' -%}
+              {%- for item in items -%}
+                {%- assign parts = item | strip | split: '|' -%}
+                {%- if parts.size > 1 -%}
+                  <a href="{{ parts[1] | strip }}">{{ parts[0] | strip }}</a>
+                {%- else -%}
+                  <a href="#">{{ parts[0] | strip }}</a>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="som-footer__bottom">{{ section.settings.copyright }}</div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Somnia footer",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "copyright", "label": "Copyright", "default": "© 2026 Somnia Lab" }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        { "type": "textarea", "id": "items", "label": "Items (one per line, optional 'Label | /url')", "default": "Love Machine\nShell Store\nEncounters\nStories\nCareers\nAbout" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Somnia footer",
+      "blocks": [
+        { "type": "column", "settings": { "items": "Love Machine\nShell Store\nEncounters\nStories\nCareers\nAbout" } },
+        { "type": "column", "settings": { "items": "LinkedIn\nYouTube\nInstagram\nTikTok\nX" } },
+        { "type": "column", "settings": { "items": "Discord\nTelegram" } },
+        { "type": "column", "settings": { "items": "Commercial\nInvestor Relations\nPress\nContact" } },
+        { "type": "column", "settings": { "items": "Terms & Conditions\nPrivacy & Cookies" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
